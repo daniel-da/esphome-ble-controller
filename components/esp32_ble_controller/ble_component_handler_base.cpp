@@ -26,7 +26,7 @@ void BLEComponentHandlerBase::setup(BLEServer* ble_server) {
 
   // Get or create the BLE service.
   const string& service_UUID = characteristic_info.service_UUID;
-  BLEService* service = ble_server->getServiceByUUID(service_UUID);
+  BLEService* service = ble_server->getService(service_UUID);
   if (service == nullptr) {
     service = ble_server->createService(service_UUID);
   }
